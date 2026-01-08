@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .credit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  .credit-btn:hover {
+    background-color: #43a047;
+  }
+</style>
+</head>
+
+<body>
+
+<button class="credit-btn" onclick="addCredit()">
+  💰 Credit: <span id="credit">0</span>
+</button>
+
+<script>
+  let credit = localStorage.getItem("credit") || 0;
+  document.getElementById("credit").innerText = credit;
+
+  function addCredit() {
+    credit++;
+    localStorage.setItem("credit", credit);
+    document.getElementById("credit").innerText = credit;
+  }
+</script>
+
+</body>
+</html>
